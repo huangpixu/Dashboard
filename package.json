@@ -20,10 +20,10 @@
   "scripts": {
     "prepare": "husky install",
     "commit": "cz",
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "cross-env VITE_APP_BUILD_MODE=cdn vite build",
     "upload": "node scripts/upload-cdn.cjs",
-    "serve": "vite preview",
+    "serve": "vite preview --host 0.0.0.0",
     "build:crx": "cross-env VITE_APP_BUILD_MODE=crx vite build",
     "move:crx": "node scripts/build-crx.cjs",
     "lint": "oxlint src"
@@ -79,6 +79,7 @@
     "@types/pako": "^1.0.6",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-vue": "^4.4.0",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
     "adm-zip": "^0.5.5",
